@@ -1,0 +1,29 @@
+name: sync
+on:
+  schedule:
+    - cron: 30 */2 * * *
+  workflow_dispatch:
+jobs:
+  1:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Git Clone Repository
+      run: |
+        git clone https://github.com/binary-person/womginx git1
+    - name: Deploy 1
+      uses: JamesIves/github-pages-deploy-action@v4.2.3
+      with:
+        git-config-name: GitHub Action
+        git-config-email: action@github.com
+        branch: main
+        folder: git1
+        target-folder: womginx
+        commit-message: Action Update
+        clean: true
+        single-commit: false
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        retain_days: 0
+        keep_minimum_runs: 0
