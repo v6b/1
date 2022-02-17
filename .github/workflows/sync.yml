@@ -11,7 +11,7 @@ jobs:
     - name: Git Clone Repository
       run: |
         git clone https://github.com/binary-person/womginx git1
-        cd git1
+        cd git1/public
         wget -qO logo.png https://github.com/HFIProgramming/mikutap/raw/master/favicon.ico
         wget -qO logo-full.png https://github.com/HFIProgramming/mikutap/raw/master/favicon.ico
     - name: Deploy 1
