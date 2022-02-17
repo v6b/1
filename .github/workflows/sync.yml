@@ -14,7 +14,7 @@ jobs:
         cd git1/public
         wget -qO logo.png https://github.com/HFIProgramming/mikutap/raw/master/favicon.ico
         wget -qO logo-full.png https://github.com/HFIProgramming/mikutap/raw/master/favicon.ico
-        sed -i "s/Proxy//g" index.html
+        sed -i "s/ Proxy//g" index.html
         sed -i "s/www.google.com/www.baidu.com/g" index.html
     - name: Deploy 1
       uses: JamesIves/github-pages-deploy-action@v4.2.3
