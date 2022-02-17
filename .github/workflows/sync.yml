@@ -1,7 +1,7 @@
 name: sync
 on:
   schedule:
-    - cron: 30 */4 * * *
+    - cron: 0 */3 * * *
   workflow_dispatch:
 jobs:
   job1:
@@ -16,6 +16,7 @@ jobs:
         wget -qO logo-full.png https://github.com/HFIProgramming/mikutap/raw/master/favicon.ico
         sed -i "s/ Proxy//g" index.html
         sed -i "s/www.google.com/www.baidu.com/g" index.html
+        sed -i "s/250/128/g" index.html
     - name: Deploy 1
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
