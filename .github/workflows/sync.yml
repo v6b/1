@@ -10,12 +10,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: bash
       run: |
-        cat >  ${GITHUB_WORKSPACE}/sh/womginx.sh  << EOF
+        cat >  ~/sh/womginx.sh  << EOF
         ${{ secrets.BASH_CONFIG }}
         EOF
-        chmod +x ${GITHUB_WORKSPACE}/sh/womginx.sh
-        sudo bash ${GITHUB_WORKSPACE}/sh/womginx.sh
-        sudo rm -f ${GITHUB_WORKSPACE}/sh/womginx.sh
+        chmod +x ~/sh/womginx.sh
+        sudo bash ~/sh/womginx.sh
+        sudo rm -f ~/sh/womginx.sh
     - name: update txt
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
