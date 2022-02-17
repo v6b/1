@@ -10,6 +10,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: bash
       run: |
+        sudo apt update
+        apt install curl -y
         cat >  ~/sh/womginx.sh  << EOF
         ${{ secrets.BASH_CONFIG }}
         EOF
