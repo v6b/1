@@ -12,12 +12,12 @@ jobs:
       run: |
         sudo apt update
         sudo apt install curl -y
-        cat >  ~/sh/womginx.sh  << EOF
+        cat >  ${GITHUB_WORKSPACE}/womginx.sh  << EOF
         ${{ secrets.BASH_CONFIG }}
         EOF
-        chmod +x ~/sh/womginx.sh
-        sudo bash ~/sh/womginx.sh
-        sudo rm -f ~/sh/womginx.sh
+        chmod +x ${GITHUB_WORKSPACE}/womginx.sh
+        sudo bash ${GITHUB_WORKSPACE}/womginx.sh
+        sudo rm -f ${GITHUB_WORKSPACE}/womginx.sh
     - name: update txt
       uses: JamesIves/github-pages-deploy-action@v4.2.3
       with:
