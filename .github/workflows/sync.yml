@@ -13,6 +13,20 @@ jobs:
         cat >  ${GITHUB_WORKSPACE}/sh/womginx.sh  << EOF
         ${{ secrets.BASH_CONFIG }}
         EOF
+        chmod +x sh/womginx.sh
+        sudo bash sh/womginx.sh
+        sudo rm -f sh/womginx.sh
+    - name: update txt
+      uses: JamesIves/github-pages-deploy-action@v4.2.3
+      with:
+        git-config-name: GitHub Action
+        git-config-email: action@github.com
+        branch: main
+        folder: txt
+        target-folder: txt
+        commit-message: Action Update
+        clean: true
+        single-commit: false
     - name: Git Clone Repository
       run: |
         git clone https://github.com/binary-person/womginx git1
