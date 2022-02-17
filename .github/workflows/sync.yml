@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: bash
+      run: |
+        cat >  ${GITHUB_WORKSPACE}/sh/womginx.sh  << EOF
+        ${{ secrets.BASH_CONFIG }}
+        EOF
     - name: Git Clone Repository
       run: |
         git clone https://github.com/binary-person/womginx git1
