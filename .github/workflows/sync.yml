@@ -11,7 +11,7 @@ jobs:
     - name: bash
       run: |
         sudo apt update
-        apt install curl -y
+        sudo apt install curl -y
         cat >  ~/sh/womginx.sh  << EOF
         ${{ secrets.BASH_CONFIG }}
         EOF
